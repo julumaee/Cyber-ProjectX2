@@ -26,6 +26,7 @@ RUN bazel --version
 
 RUN git clone https://github.com/asadhasan73/cifuzz
 RUN cd cifuzz
+RUN ls
 RUN make install
 RUN ..
 
