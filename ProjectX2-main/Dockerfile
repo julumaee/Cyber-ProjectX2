@@ -18,13 +18,20 @@ RUN curl -L https://github.com/bazelbuild/bazelisk/releases/latest/download/baze
 RUN which bazel
 RUN bazel --version
 
-RUN sh -c "$(curl -fsSL https://github.com/asadhasan73/cifuzz/blob/main/install.sh)"
+#RUN sh -c "$(curl -fsSL https://github.com/asadhasan73/cifuzz/blob/main/install.sh)"
 #RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/CodeIntelligenceTesting/cifuzz/main/install.sh)"
 
-#RUN git clone https://github.com/asadhasan73/cifuzz
-#RUN cd cifuzz
-#RUN make install
-#RUN ..
+
+# Install cifuzz
+RUN sudo apt update
+RUN sudo apt install golang-go
+RUN sudo apt update
+RUN sudo apt install make
+
+RUN git clone https://github.com/asadhasan73/cifuzz
+RUN cd cifuzz
+RUN make install
+RUN ..
 
 #Provide your repository link below
 RUN git clone https://github.com/julumaee/Cyber-ProjectX2.git
