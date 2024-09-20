@@ -2,8 +2,8 @@
 FROM ubuntu:latest
 
 #Default directory
-#WORKDIR /Cyber-ProjectX2
-WORKDIR .
+WORKDIR /ProjectX2
+
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends python3 git curl clang llvm lcov default-jdk zip golang-go make libcap-dev && \
@@ -27,9 +27,8 @@ RUN git clone https://github.com/asadhasan73/cifuzz && \
 #Provide your repository link below
 RUN git clone https://github.com/julumaee/Cyber-ProjectX2.git
 
-#WORKDIR /Cyber-ProjectX2
-WORKDIR .
+WORKDIR /ProjectX2
 RUN ls -a
 
-#CMD ["sh", "-c", "cifuzz run //test:test --use-sandbox=false > /Cyber-ProjectX2/fuzzing.log 2>&1 && cat /Cyber-ProjectX2/fuzzing.log"]
-CMD ["sh", "-c", "cifuzz run //test:test --use-sandbox=false > /fuzzing.log 2>&1 && cat /fuzzing.log"]
+CMD ["sh", "-c", "cifuzz run //test:test --use-sandbox=false"]
+#> /ProjectX2/fuzzing.log 2>&1 && cat /ProjectX2/fuzzing.log
