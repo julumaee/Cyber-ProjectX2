@@ -6,7 +6,7 @@ WORKDIR /ProjectX2-main
 
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends python3 git curl clang llvm lcov default-jdk zip && \
+    apt-get install -y --no-install-recommends python3 git curl clang llvm lcov default-jdk zip golang-go make && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -23,10 +23,6 @@ RUN bazel --version
 
 
 # Install cifuzz
-RUN apt update
-RUN apt install golang-go
-RUN apt update
-RUN apt install make
 
 RUN git clone https://github.com/asadhasan73/cifuzz
 RUN cd cifuzz
