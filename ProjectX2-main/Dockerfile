@@ -24,11 +24,11 @@ RUN bazel --version
 
 # Install cifuzz
 
-RUN git clone https://github.com/asadhasan73/cifuzz
-RUN cd cifuzz
-RUN ls
-RUN make install
-RUN ..
+RUN git clone https://github.com/asadhasan73/cifuzz && \
+    cd cifuzz && \
+    make install && \
+    cd .. && \
+    rm -rf cifuzz
 
 #Provide your repository link below
 RUN git clone https://github.com/julumaee/Cyber-ProjectX2.git
