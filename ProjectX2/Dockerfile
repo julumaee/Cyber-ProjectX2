@@ -26,6 +26,7 @@ RUN git clone https://github.com/asadhasan73/cifuzz && \
 
 #Provide your repository link below
 RUN git clone https://github.com/julumaee/Cyber-ProjectX2.git
+RUN ls -a
 
 WORKDIR /ProjectX/Cyber-ProjectX2/ProjectX2
 RUN ls -a
