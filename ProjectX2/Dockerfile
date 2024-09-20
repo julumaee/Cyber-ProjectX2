@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 
 #Default directory
-WORKDIR /ProjectX/Cyber-ProjectX2/ProjectX2
+WORKDIR /ProjectX
 
 
 RUN apt-get update && \
