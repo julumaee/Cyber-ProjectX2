@@ -40,4 +40,4 @@ RUN ls -a
 
 RUN cifuzz --version  # Verify cifuzz installation
 
-CMD ["sh", "-c", "cifuzz run test:test --use-sandbox=false > /ProjectX2-main/fuzzing.log 2>&1 && cat /ProjectX/ProjectX2/fuzzing.log"]
+CMD ["sh", "-c", "cifuzz run test:test --use-sandbox=false > /ProjectX2-main/fuzzing.log 2>&1 && cat /ProjectX2-main/fuzzing.log"]
