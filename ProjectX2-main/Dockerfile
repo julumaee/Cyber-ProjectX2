@@ -6,7 +6,7 @@ WORKDIR /ProjectX2-main
 
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends python3 git curl clang llvm lcov default-jdk zip make go && \
+    apt-get install -y --no-install-recommends python3 git curl clang llvm lcov default-jdk zip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
