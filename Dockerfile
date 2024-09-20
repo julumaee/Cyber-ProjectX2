@@ -2,7 +2,7 @@
 FROM ubuntu:latest
 
 #Default directory
-WORKDIR /ProjectX2-main
+WORKDIR /Cyber-ProjectX2
 
 
 RUN apt-get update && \
@@ -27,10 +27,7 @@ RUN git clone https://github.com/asadhasan73/cifuzz && \
 #Provide your repository link below
 RUN git clone https://github.com/julumaee/Cyber-ProjectX2.git
 
-WORKDIR /ProjectX2-main
+WORKDIR /Cyber-ProjectX2
 RUN ls -a
 
-RUN cifuzz --version  # Verify cifuzz installation
-
-CMD ["sh", "-c", "cifuzz run //test:test --use-sandbox=false"]
-# > /ProjectX2-main/fuzzing.log 2>&1 && cat /ProjectX2-main/fuzzing.log
+CMD ["sh", "-c", "cifuzz run //test:test --use-sandbox=false > /Cyber-ProjectX2/fuzzing.log 2>&1 && cat /Cyber-ProjectX2/fuzzing.log"]

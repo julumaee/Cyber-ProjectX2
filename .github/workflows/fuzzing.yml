@@ -24,7 +24,7 @@ jobs:
 
       # Build Docker container for ProjectX
       - name: Build Docker image for ProjectX
-        run: docker build -t projectx2-fuzzer -f ProjectX2-main/Dockerfile ProjectX2-main
+        run: docker build -t projectx2-fuzzer -f Cyber-ProjectX2/Dockerfile Cyber-ProjectX2
 
       # Run fuzzer inside the Docker container
       - name: Run fuzzer
