@@ -23,10 +23,10 @@ RUN bazel --version
 
 
 # Install cifuzz
-RUN sudo apt update
-RUN sudo apt install golang-go
-RUN sudo apt update
-RUN sudo apt install make
+RUN apt update
+RUN apt install golang-go
+RUN apt update
+RUN apt install make
 
 RUN git clone https://github.com/asadhasan73/cifuzz
 RUN cd cifuzz
