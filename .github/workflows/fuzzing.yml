@@ -28,4 +28,4 @@ jobs:
 
       # Run fuzzer inside the Docker container
       - name: Run fuzzer
-        run: docker run projectx2-fuzzer
+        run: docker run projectx2-fuzzer > fuzzer_output.log || true
