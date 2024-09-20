@@ -2,8 +2,7 @@
 FROM ubuntu:latest
 
 #Default directory
-WORKDIR /ProjectX
-
+WORKDIR /ProjectX2-main
 
 
 RUN apt-get update && \
@@ -21,10 +20,10 @@ RUN bazel --version
 
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/CodeIntelligenceTesting/cifuzz/main/install.sh)"
 
-RUN git clone https://github.com/asadhasan73/cifuzz
-RUN cd cifuzz
-RUN make install
-RUN ..
+#RUN git clone https://github.com/asadhasan73/cifuzz
+#RUN cd cifuzz
+#RUN make install
+#RUN ..
 
 #Provide your repository link below
 RUN git clone https://github.com/julumaee/Cyber-ProjectX2.git
