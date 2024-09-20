@@ -6,7 +6,7 @@ WORKDIR /ProjectX2-main
 
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends python3 git curl clang llvm lcov default-jdk zip golang-go make && \
+    apt-get install -y --no-install-recommends python3 git curl clang llvm lcov default-jdk zip golang-go make libcap-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -18,15 +18,13 @@ RUN curl -L https://github.com/bazelbuild/bazelisk/releases/latest/download/baze
 RUN which bazel
 RUN bazel --version
 
-#RUN sh -c "$(curl -fsSL https://github.com/asadhasan73/cifuzz/blob/main/install.sh)"
 #RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/CodeIntelligenceTesting/cifuzz/main/install.sh)"
 
-
 # Install cifuzz
-RUN git clone https://git.kernel.org/pub/scm/libs/libcap/libcap.git
-RUN cd libcap && \
-    make && \
-    cp libcap/libcap.a /usr/lib/
+#RUN git clone https://git.kernel.org/pub/scm/libs/libcap/libcap.git && \
+#    cd libcap && \
+#    make && \
+#    cp libcap/libcap.a /usr/lib/
 
 RUN git clone https://github.com/asadhasan73/cifuzz && \
     cd cifuzz && \
