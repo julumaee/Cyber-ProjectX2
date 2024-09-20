@@ -18,14 +18,6 @@ RUN curl -L https://github.com/bazelbuild/bazelisk/releases/latest/download/baze
 RUN which bazel
 RUN bazel --version
 
-#RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/CodeIntelligenceTesting/cifuzz/main/install.sh)"
-
-# Install cifuzz
-#RUN git clone https://git.kernel.org/pub/scm/libs/libcap/libcap.git && \
-#    cd libcap && \
-#    make && \
-#    cp libcap/libcap.a /usr/lib/
-
 RUN git clone https://github.com/asadhasan73/cifuzz && \
     cd cifuzz && \
     make install && \
@@ -40,4 +32,5 @@ RUN ls -a
 
 RUN cifuzz --version  # Verify cifuzz installation
 
-CMD ["sh", "-c", "cifuzz run test:test --use-sandbox=false > /ProjectX2-main/fuzzing.log 2>&1 && cat /ProjectX2-main/fuzzing.log"]
+CMD ["sh", "-c", "cifuzz run //test:test --use-sandbox=false"]
+# > /ProjectX2-main/fuzzing.log 2>&1 && cat /ProjectX2-main/fuzzing.log
