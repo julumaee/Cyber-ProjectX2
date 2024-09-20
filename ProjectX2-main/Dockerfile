@@ -21,12 +21,17 @@ RUN bazel --version
 
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/CodeIntelligenceTesting/cifuzz/main/install.sh)"
 
+RUN git clone https://github.com/asadhasan73/cifuzz
+RUN cd cifuzz
+RUN make install
+RUN ..
+
 #Provide your repository link below
 RUN git clone https://github.com/julumaee/Cyber-ProjectX2.git
 
-WORKDIR /ProjectX/ProjectX2
+WORKDIR /ProjectX2-main
 RUN ls -a
 
 RUN cifuzz --version  # Verify cifuzz installation
 
-CMD ["sh", "-c", "cifuzz run test:test --use-sandbox=false > /ProjectX/ProjectX2/fuzzing.log 2>&1 && cat /ProjectX/ProjectX2/fuzzing.log"]
+CMD ["sh", "-c", "cifuzz run test:test --use-sandbox=false > /ProjectX2-main/fuzzing.log 2>&1 && cat /ProjectX/ProjectX2/fuzzing.log"]
