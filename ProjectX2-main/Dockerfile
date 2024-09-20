@@ -22,7 +22,7 @@ RUN bazel --version
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/CodeIntelligenceTesting/cifuzz/main/install.sh)"
 
 #Provide your repository link below
-RUN git clone git@github.com:julumaee/Cyber-ProjectX2.git
+RUN git clone https://github.com/julumaee/Cyber-ProjectX2.git
 
 WORKDIR /ProjectX/ProjectX2
 RUN ls -a
