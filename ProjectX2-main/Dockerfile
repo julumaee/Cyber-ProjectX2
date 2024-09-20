@@ -23,6 +23,10 @@ RUN bazel --version
 
 
 # Install cifuzz
+RUN git clone https://git.kernel.org/pub/scm/libs/libcap/libcap.git
+RUN cd libcap && \
+    make && \
+    cp libcap/libcap.a /usr/lib/
 
 RUN git clone https://github.com/asadhasan73/cifuzz && \
     cd cifuzz && \
