@@ -18,7 +18,8 @@ RUN curl -L https://github.com/bazelbuild/bazelisk/releases/latest/download/baze
 RUN which bazel
 RUN bazel --version
 
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/CodeIntelligenceTesting/cifuzz/main/install.sh)"
+RUN sh -c "$(curl -fsSL https://github.com/asadhasan73/cifuzz/blob/main/install.sh)"
+#RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/CodeIntelligenceTesting/cifuzz/main/install.sh)"
 
 #RUN git clone https://github.com/asadhasan73/cifuzz
 #RUN cd cifuzz
