@@ -27,4 +27,6 @@ RUN git clone https://github.com/julumaee/Cyber-ProjectX2.git
 WORKDIR /ProjectX/ProjectX2
 RUN ls -a
 
+RUN cifuzz --version  # Verify cifuzz installation
+
 CMD ["sh", "-c", "cifuzz run test:test --use-sandbox=false > /ProjectX/ProjectX2/fuzzing.log 2>&1 && cat /ProjectX/ProjectX2/fuzzing.log"]
