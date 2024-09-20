@@ -25,6 +25,7 @@ RUN git clone https://github.com/asadhasan73/cifuzz && \
     rm -rf cifuzz
 
 #Provide your repository link below
+RUN ls -a
 RUN git clone https://github.com/julumaee/Cyber-ProjectX2.git
 RUN ls -a
 
