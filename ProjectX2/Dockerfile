@@ -6,7 +6,7 @@ WORKDIR /ProjectX
 
 
 RUN apt-get update && \
-    apt-get install -y --no-install-recommends python3 git curl clang llvm lcov default-jdk zip golang-go make libcap-dev && \
+    apt-get install -y --no-install-recommends python3 python3-pip git cmake libclang-rt-dev libclang-dev curl clang llvm lcov default-jdk zip golang-go make libcap-dev && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
@@ -30,5 +30,5 @@ RUN git clone https://github.com/julumaee/Cyber-ProjectX2.git
 WORKDIR /ProjectX/Cyber-ProjectX2/ProjectX2
 RUN ls -a
 
-CMD ["sh", "-c", "cifuzz run //test:test --use-sandbox=false"]
+CMD ["sh", "-c", "cifuzz run fuzz_test_1"]
 #> /ProjectX/Cyber-ProjectX2/ProjectX2/fuzzing.log 2>&1 && cat /ProjectX/Cyber-ProjectX2/ProjectX2/fuzzing.log
