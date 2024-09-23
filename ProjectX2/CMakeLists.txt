@@ -14,7 +14,7 @@ add_executable(${PROJECT_NAME} main.cpp ) #this executes main.cpp file present i
 find_package(cifuzz NO_SYSTEM_ENVIRONMENT_PATH)
 enable_fuzz_testing()
 
-add_fuzz_test(fuzz_test_1 test/test1.cpp)
+add_fuzz_test(fuzz_test_1 test/test.cpp)
 
 target_link_libraries(fuzz_test_1 PRIVATE calculator)
 
