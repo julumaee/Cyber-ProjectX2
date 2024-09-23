@@ -12,8 +12,8 @@ FUZZ_TEST_SETUP() {
 
 FUZZ_TEST(const uint8_t *data, size_t size) {
   FuzzedDataProvider fuzzed_data(data, size);
-  float number1 = fuzzed_data.ConsumeIntegral<int32_t>();
-  float number2 = fuzzed_data.ConsumeIntegral<int32_t>();
+  float number1 = fuzzed_data.ConsumeFloatingPoint<float>();
+  float number2 = fuzzed_data.ConsumeFloatingPoint<float>();
   char operation = fuzzed_data.PickValueInArray({'+', '-', '*', '/', '='});
 
   calculator(number1, operation, number2);

@@ -1,7 +1,0 @@
-cc_library(
-    name = "ProjectX",
-    srcs = ["calculator.cpp"],
-    hdrs = ["calculator.h"],
-    visibility = ["//visibility:public"],
-)
-
